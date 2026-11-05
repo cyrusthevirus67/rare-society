@@ -88,5 +88,14 @@
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
   const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.12 });
   document.querySelectorAll(".reveal").forEach((el, i) => { el.style.transitionDelay = `${(i % 3) * 80}ms`; io.observe(el); });
+  // Mobile buy bar: shown after the hero, hidden while the pricing or closing section is on screen.
+  const bar = document.getElementById("buybar");
+  if (bar) {
+    const seen = new Map();
+    const watch = [document.querySelector(".shero"), document.getElementById("pricing"), document.getElementById("waitlist")].filter(Boolean);
+    const upd = () => bar.classList.toggle("is-on", ![...seen.values()].some(Boolean));
+    const obs = new IntersectionObserver((es) => { es.forEach((e) => seen.set(e.target, e.isIntersecting)); upd(); });
+    watch.forEach((el) => { seen.set(el, true); obs.observe(el); });
+  }
   if (window.RS.DEMO) toast("Preview mode — sample data");
 })();

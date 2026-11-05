@@ -19,11 +19,14 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/society.css?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/society.css?v=2">
+  <link rel="stylesheet" href="/sales.css?v=1">
 </head>
-<body>
+<body class="sales">
   <a class="skip" href="#main">Skip to content</a>
+
+  <a class="topbar" href="#pricing" data-founding hidden><span class="topbar__dot"></span><b>Founding member pricing is open</b><span class="topbar__sep">·</span><span class="topbar__more">Join for $<span data-price="membership">49</span>/mo and keep that price</span><span class="topbar__go">→</span></a>
 
   <header class="nav" id="top">
     <div class="wrap nav__inner">
@@ -31,6 +34,7 @@
       <nav class="nav__links" aria-label="Primary">
         <a href="#inside">What you get</a>
         <a href="#curriculum">Curriculum</a>
+        <a href="#coach">Your coach</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -41,6 +45,7 @@
     <div class="mobile-menu" id="mobile-menu" hidden>
       <a href="#inside">What you get</a>
       <a href="#curriculum">Curriculum</a>
+      <a href="#coach">Your coach</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="/login" data-demo-link>Member login</a>
@@ -49,57 +54,132 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="hero__media" aria-hidden="true"><img src="https://images.unsplash.com/photo-1560785219-cc81ab373cd3?auto=format&fit=crop&w=2000&q=70" alt="" fetchpriority="high"></div>
-      <div class="wrap">
-        <p class="founding" data-founding hidden>Founding member pricing is open</p>
-        <p class="label">By Rare Feature · Course + community</p>
-        <h1 class="hero__title"><span>The Rare</span><em>Society.</em></h1>
-        <div class="hero__foot">
-          <p class="hero__lede">Learn to grow on social media the way we do it for our clients. A step-by-step course, a live Q&amp;A every month, and a community of business owners and creators building right alongside you.</p>
-          <div class="hero__buy">
-            <div class="hero__actions">
-              <a href="#pricing" class="btn btn--red" data-buy="membership"><span>Join for $<span data-price="membership">49</span>/mo</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-              <a href="#curriculum" class="btn btn--glass">See what’s inside</a>
-            </div>
-            <p class="hero__price"><b>Instant access</b> · Cancel anytime</p>
+    <!-- HERO -->
+    <section class="shero">
+      <div class="shero__bg" aria-hidden="true"></div>
+      <div class="wrap shero__grid">
+        <div class="shero__copy">
+          <p class="eyebrow"><span>By Rare Feature</span> Course + live coaching + community</p>
+          <h1 class="shero__title">Grow on social <em>like it’s your job.</em></h1>
+          <p class="shero__lede">The Rare Society teaches you the system we use to grow accounts for businesses and creators — step by step, with live answers every month and a community that keeps you posting.</p>
+          <div class="shero__cta">
+            <a href="#pricing" class="btn btn--red btn--lg" data-buy="membership"><span>Join The Rare Society</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <p class="shero__price"><b>$<span data-price="membership">49</span></b>/month<small>Cancel anytime</small></p>
           </div>
+          <ul class="trust">
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Instant access</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>New lessons added</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3 3 7-7"/></svg>Secure checkout</li>
+          </ul>
+        </div>
+
+        <!-- Product preview -->
+        <div class="mock" aria-hidden="true">
+          <div class="mock__win">
+            <div class="mock__bar"><i></i><i></i><i></i><span>society.rarefeature.com/learn</span></div>
+            <div class="mock__body">
+              <div class="mock__side">
+                <p class="mock__k">Your progress</p>
+                <div class="mock__prog"><i style="width:38%"></i></div>
+                <ul>
+                  <li class="is-done"><b></b>Find your lane</li>
+                  <li class="is-done"><b></b>A profile that converts</li>
+                  <li class="is-on"><b></b>Content that stops the scroll</li>
+                  <li><b></b>Film it with your phone</li>
+                  <li><b></b>Your posting system</li>
+                  <li><b></b>Grow and engage</li>
+                  <li><b></b>Turn attention into income</li>
+                </ul>
+              </div>
+              <div class="mock__main">
+                <p class="mock__k mock__k--red">Module 03</p>
+                <p class="mock__t">Hooks that stop the scroll</p>
+                <div class="mock__video">
+                  <img src="https://images.unsplash.com/photo-1611784728558-6c7d9b409cdf?auto=format&fit=crop&w=900&h=506&q=60" alt="" fetchpriority="high">
+                  <span class="mock__play"><svg viewBox="0 0 20 20"><path d="M7 5l8 5-8 5z"/></svg></span>
+                  <span class="mock__time">12:40</span>
+                </div>
+                <div class="mock__lines"><i></i><i></i><i style="width:62%"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="float float--a"><span class="float__ic"><svg viewBox="0 0 20 20"><path d="M5 10.5l3 3 7-7"/></svg></span><div><b>Lesson complete</b><small>On to the next one</small></div></div>
+          <div class="float float--b"><span class="float__live">LIVE</span><div><b>Monthly Q&amp;A</b><small>Bring your questions</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="band" aria-hidden="true">
+      <div class="band__track">
+        <span>Strategy</span><i>✦</i><span>Hooks</span><i>✦</i><span>Filming</span><i>✦</i><span>Editing</span><i>✦</i><span>Posting systems</span><i>✦</i><span>Growth</span><i>✦</i><span>Brand deals</span><i>✦</i><span>Sales</span><i>✦</i>
+        <span>Strategy</span><i>✦</i><span>Hooks</span><i>✦</i><span>Filming</span><i>✦</i><span>Editing</span><i>✦</i><span>Posting systems</span><i>✦</i><span>Growth</span><i>✦</i><span>Brand deals</span><i>✦</i><span>Sales</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="head head--center">
+          <p class="label">Sound familiar?</p>
+          <h2 class="display display--md">You’re posting.<br><em>Nothing’s happening.</em></h2>
+        </div>
+        <div class="pains">
+          <article class="pain reveal"><span class="pain__ic">01</span><h3>You don’t know what to post</h3><p>So you post whatever comes to mind — or nothing at all.</p></article>
+          <article class="pain reveal"><span class="pain__ic">02</span><h3>Views, but no followers</h3><p>The odd video does well, then everything goes quiet again.</p></article>
+          <article class="pain reveal"><span class="pain__ic">03</span><h3>Followers who never buy</h3><p>People watch, but they never call, book, or order.</p></article>
+          <article class="pain reveal"><span class="pain__ic">04</span><h3>No one to ask</h3><p>Every “expert” says something different, and nobody looks at <em>your</em> account.</p></article>
+        </div>
+        <div class="turn reveal">
+          <p>It’s not the algorithm. It’s the lack of a <em>system.</em></p>
+          <p class="turn__sub">The Rare Society gives you one — and people to help you run it.</p>
         </div>
       </div>
     </section>
 
     <!-- WHAT YOU GET -->
-    <section class="section" id="inside">
+    <section class="section section--panel" id="inside">
       <div class="wrap">
         <div class="head head--row">
           <div>
             <p class="label">What you get</p>
             <h2 class="display">Three things.<br>One <em>membership.</em></h2>
           </div>
-          <p class="sub">Everything we’ve learned growing accounts for businesses and creators — organised into a course you can follow, plus real help when you get stuck.</p>
+          <p class="sub">A course you can follow, a live call when you get stuck, and a room full of people doing the same work.</p>
         </div>
-        <div class="pillars">
-          <article class="pillar pillar--hot reveal">
-            <p class="pillar__n">01</p>
-            <h3>The full course</h3>
-            <p>Step-by-step video lessons on strategy, content, filming, posting, and turning followers into customers. Watch at your own pace, on any device.</p>
+        <div class="gets">
+          <article class="get get--big reveal">
+            <div class="get__copy">
+              <p class="get__n">01 · The course</p>
+              <h3>Step-by-step video lessons</h3>
+              <p>Short, practical lessons that take you from “what do I post?” to a weekly content system that brings in followers and customers. Watch on any device, at your own pace.</p>
+              <ul class="ticks"><li>Strategy, hooks, filming, and editing</li><li>Posting systems you can keep up</li><li>Turning attention into income</li><li>New lessons added over time</li></ul>
+            </div>
+            <div class="get__art get__art--lessons" aria-hidden="true">
+              <div class="lrow is-done"><b></b><span>Find your lane</span><small>Module 1</small></div>
+              <div class="lrow is-done"><b></b><span>A profile that converts</span><small>Module 2</small></div>
+              <div class="lrow is-on"><b></b><span>Content that stops the scroll</span><small>Module 3</small></div>
+              <div class="lrow"><b></b><span>Film it with your phone</span><small>Module 4</small></div>
+              <div class="lrow"><b></b><span>Your posting system</span><small>Module 5</small></div>
+            </div>
           </article>
-          <article class="pillar reveal">
-            <p class="pillar__n">02</p>
-            <h3>Monthly live Q&amp;A</h3>
-            <p>Every month we go live to answer your questions and look at members’ accounts — so you’re never guessing what to do next.</p>
+          <article class="get reveal">
+            <p class="get__n">02 · Live Q&amp;A</p>
+            <h3>A live call every month</h3>
+            <p>Bring your questions and your account. We answer live and review members’ pages, so you always know your next move.</p>
+            <div class="get__art get__art--live" aria-hidden="true"><span class="float__live">LIVE</span><div><b>Monthly Q&amp;A</b><small>Questions + page reviews</small></div></div>
           </article>
-          <article class="pillar reveal">
-            <p class="pillar__n">03</p>
-            <h3>The community</h3>
+          <article class="get reveal">
+            <p class="get__n">03 · Community</p>
+            <h3>People in your corner</h3>
             <p>A private group of members sharing wins, swapping feedback, and keeping each other consistent.</p>
+            <div class="get__art get__art--chat" aria-hidden="true"><span class="bub">Posted 3 times this week 🙌</span><span class="bub bub--me">Same — the batching lesson helped</span></div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- CURRICULUM -->
-    <section class="section section--panel" id="curriculum">
+    <section class="section" id="curriculum">
       <div class="wrap">
         <div class="head head--row">
           <div>
@@ -109,16 +189,32 @@
           <p class="sub">A clear path from “I don’t know what to post” to a system that brings in followers and customers every month.</p>
         </div>
         <div class="curr" id="curr"></div>
-        <p class="curr__note" id="curr-note">New lessons are added over time, and members get every one of them.</p>
+        <p class="curr__note" id="curr-note">New lessons are added over time — members get every one of them.</p>
+      </div>
+    </section>
+
+    <!-- VALUE -->
+    <section class="section section--panel">
+      <div class="wrap">
+        <div class="head head--center">
+          <p class="label">The math</p>
+          <h2 class="display display--md">Our system, for<br>a <em>fraction</em> of the price.</h2>
+          <p class="sub">Done-for-you content and one-on-one planning are what our clients pay for. The Society teaches you to do it yourself — with us on call.</p>
+        </div>
+        <div class="value reveal">
+          <div class="value__col"><p class="value__k">Done for you</p><p class="value__p">$997<small>+/mo</small></p><p>We film, edit, and post for you</p></div>
+          <div class="value__col"><p class="value__k">Growth Plan</p><p class="value__p">$497<small> once</small></p><p>Audit, 90-day plan, strategy call</p></div>
+          <div class="value__col value__col--hot"><p class="value__k">The Rare Society</p><p class="value__p">$<span data-price="membership">49</span><small>/mo</small></p><p>Learn the system, with live help</p><a href="#pricing" class="btn btn--red btn--sm" data-buy="membership">Join now</a></div>
+        </div>
       </div>
     </section>
 
     <!-- FOR YOU -->
     <section class="section">
       <div class="wrap">
-        <div class="head">
+        <div class="head head--center">
           <p class="label">Who it’s for</p>
-          <h2 class="display">Built for<br><em>doers.</em></h2>
+          <h2 class="display display--md">Built for <em>doers.</em></h2>
         </div>
         <div class="fit">
           <article class="fit__card reveal">
@@ -134,7 +230,7 @@
             <h3>It’s not for you if</h3>
             <ul class="crosses">
               <li>You’re looking for an overnight hack or bought followers</li>
-              <li>You want someone else to do everything for you <a href="https://rarefeature.com/pricing" style="color:var(--text)">(we do that too)</a></li>
+              <li>You want someone else to do everything — <a href="https://rarefeature.com/pricing">we do that too</a></li>
               <li>You won’t post consistently</li>
             </ul>
           </article>
@@ -142,57 +238,78 @@
       </div>
     </section>
 
+    <!-- COACH -->
+    <section class="section section--panel" id="coach">
+      <div class="wrap coach">
+        <div class="coach__card reveal" aria-hidden="true">
+          <img src="/assets/mark.png" alt="" width="240" height="169">
+          <p>RARE <b>FEATURE</b></p>
+          <span>Social media growth &amp; consulting</span>
+        </div>
+        <div>
+          <p class="label">Your coach</p>
+          <h2 class="display display--md">Taught by the<br>team that <em>does it.</em></h2>
+          <p class="coach__text">I’m Cyrus, founder of Rare Feature. We plan, film, edit, and post content for businesses and creators, and coach owners on turning social media into customers.</p>
+          <p class="coach__text">The Rare Society is that playbook, opened up: how we think about hooks, filming, posting, and sales — in lessons you can follow, with me answering your questions live every month.</p>
+          <p class="coach__sig">— Cyrus, Rare Feature</p>
+        </div>
+      </div>
+    </section>
+
     <!-- HOW IT WORKS -->
-    <section class="section section--panel">
+    <section class="section">
       <div class="wrap">
-        <div class="head">
+        <div class="head head--center">
           <p class="label">How it works</p>
-          <h2 class="display display--md">Join today.<br>Start today.</h2>
+          <h2 class="display display--md">Join today.<br><em>Start today.</em></h2>
         </div>
         <ol class="steps">
           <li class="step reveal"><b>01</b><h3>Join</h3><p>Check out securely with Stripe in about a minute.</p></li>
           <li class="step reveal"><b>02</b><h3>Sign in</h3><p>Sign in with your email — no password. Every lesson unlocks right away.</p></li>
-          <li class="step reveal"><b>03</b><h3>Learn &amp; post</h3><p>Follow the lessons in order and put each one to work on your own account.</p></li>
+          <li class="step reveal"><b>03</b><h3>Learn &amp; post</h3><p>Follow the lessons in order and put each one to work on your account.</p></li>
           <li class="step reveal"><b>04</b><h3>Get answers</h3><p>Bring your questions to the monthly live Q&amp;A and the community.</p></li>
         </ol>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section class="section" id="pricing">
+    <section class="section section--pricing" id="pricing">
+      <div class="pricing__glow" aria-hidden="true"></div>
       <div class="wrap">
-        <div class="head head--row">
-          <div>
-            <p class="label">Pricing</p>
-            <h2 class="display">Pick your<br><em>way in.</em></h2>
-          </div>
-          <p class="sub">Join the Society for the course plus live help and the community — or just buy the recorded course and keep it.</p>
+        <div class="head head--center">
+          <p class="label">Pricing</p>
+          <h2 class="display">Pick your<br><em>way in.</em></h2>
         </div>
         <div class="prices">
           <article class="price-card price-card--hot reveal">
-            <p class="price-card__badge">Best value</p>
-            <p class="price-card__k">Membership</p>
+            <p class="price-card__badge" data-founding hidden>Founding member price</p>
+            <p class="price-card__k">Membership · Best value</p>
             <h3>The Rare Society</h3>
-            <p class="price"><span>$<span data-price="membership" style="font:inherit;color:inherit;margin:0">49</span></span>/month</p>
+            <p class="price"><span>$<span data-price="membership" class="inherit">49</span></span>/month</p>
             <p class="price-card__alt">Cancel anytime</p>
             <ul class="ticks">
-              <li>The full course, every lesson</li>
+              <li>The full course — every lesson</li>
               <li>Every new lesson as it’s added</li>
-              <li>Monthly live Q&amp;A</li>
-              <li>The private community</li>
+              <li>A live Q&amp;A call every month</li>
+              <li>The private member community</li>
+              <li>Instant access after checkout</li>
             </ul>
-            <a href="#waitlist" class="btn btn--red btn--block" data-buy="membership">Join The Rare Society <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-            <p class="price-card__fine">Secure checkout by Stripe</p>
+            <a href="#waitlist" class="btn btn--red btn--block btn--lg" data-buy="membership"><span>Join The Rare Society</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <p class="price-card__fine"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4.5" y="9" width="11" height="8" rx="2"/><path d="M7 9V6.5a3 3 0 016 0V9"/></svg>Secure checkout by Stripe</p>
           </article>
           <article class="price-card reveal">
             <p class="price-card__k">Course only</p>
             <h3>The course</h3>
-            <p class="price"><span>$<span data-price="course" style="font:inherit;color:inherit;margin:0">297</span></span>one-time</p>
+            <p class="price"><span>$<span data-price="course" class="inherit">297</span></span>one-time</p>
             <p class="price-card__alt" data-plan-label>Yours to keep</p>
             <ul class="ticks">
               <li>The full recorded course</li>
               <li>Lifetime access</li>
               <li>Watch at your own pace</li>
+            </ul>
+            <ul class="crosses">
+              <li>Monthly live Q&amp;A</li>
+              <li>Member community</li>
             </ul>
             <a href="#waitlist" class="btn btn--line btn--block" data-buy="course">Buy the course</a>
             <a href="#waitlist" class="btn btn--ghost btn--block" data-buy="course-plan" hidden></a>
@@ -202,26 +319,8 @@
       </div>
     </section>
 
-    <!-- LADDER -->
-    <section class="section section--panel">
-      <div class="wrap ladder">
-        <div>
-          <p class="label">Want more help?</p>
-          <h2 class="display display--md">Need it done<br>for you?</h2>
-          <p class="sub" style="margin-top:24px">The Society is the most affordable way to work with us. When you want more personal time, Rare Feature offers one-on-one strategy and done-for-you content.</p>
-          <p style="margin-top:28px"><a href="https://rarefeature.com/pricing" class="btn btn--line">See 1-on-1 options <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
-        </div>
-        <ol>
-          <li><b>Free audit</b><span>A video review of your page</span></li>
-          <li class="is-here"><b>The Rare Society</b><span>Course, live Q&amp;A, community</span></li>
-          <li><b>Growth Plan</b><span>Full audit, 90-day plan, strategy call</span></li>
-          <li><b>Done for you</b><span>We film, edit, and post every month</span></li>
-        </ol>
-      </div>
-    </section>
-
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section section--panel" id="faq">
       <div class="wrap faq">
         <div class="head">
           <p class="label">FAQ</p>
@@ -231,11 +330,12 @@
         <div class="faq__list">
           <details><summary>How do I get access after I join?</summary><p>Right after checkout, go to the member login and sign in with the email you used to pay. We email you a one-time sign-in link — no password — and every lesson is unlocked.</p></details>
           <details><summary>What’s the difference between the membership and the course?</summary><p>The course is the recorded lessons, yours to keep for a one-time price. The membership includes the same course plus the monthly live Q&amp;A, the private community, and every new lesson we add — for as long as you’re a member.</p></details>
-          <details><summary>Can I cancel my membership?</summary><p>Yes, anytime. Request it from your account page or email us, and it’s cancelled before your next billing date. You keep access until the end of the month you paid for.</p></details>
+          <details><summary>Can I cancel my membership?</summary><p>Yes, anytime. Request it from your account page or email us, and it won’t renew. You keep access until the end of the month you paid for.</p></details>
           <details><summary>When is the live Q&amp;A?</summary><p>Once a month. The date, time, and join link are posted in your member area ahead of each session.</p></details>
           <details><summary>Do I need a big following?</summary><p>No. The course starts from the beginning and works whether you have zero followers or you’re already established.</p></details>
           <details><summary>Which platforms does it cover?</summary><p>The lessons focus on short-form video — Instagram, TikTok, YouTube Shorts, and Facebook — and the same ideas carry over to LinkedIn and X.</p></details>
           <details><summary>Is this for businesses or creators?</summary><p>Both. Business owners learn how to turn social media into customers; creators learn how to grow an audience and turn it into income.</p></details>
+          <details><summary>Do I need expensive equipment?</summary><p>No. Everything in the course can be filmed and edited on your phone.</p></details>
         </div>
       </div>
     </section>
@@ -249,7 +349,7 @@
           <h2 class="display">Be one of the<br><em>rare ones.</em></h2>
           <p class="sub" id="cta-sub">Most people never post consistently. Members do — with a plan, real feedback, and people in their corner.</p>
           <div class="cta__actions" id="cta-buy">
-            <a href="#pricing" class="btn btn--red" data-buy="membership"><span>Join for $<span data-price="membership">49</span>/mo</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a href="#pricing" class="btn btn--red btn--lg" data-buy="membership"><span>Join for $<span data-price="membership">49</span>/mo</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
             <a href="#pricing" class="btn btn--glass">Compare options</a>
           </div>
         </div>
@@ -294,9 +394,15 @@
     </div>
   </footer>
 
+  <!-- Mobile buy bar -->
+  <div class="buybar" id="buybar">
+    <div><b>The Rare Society</b><small>$<span data-price="membership">49</span>/mo · cancel anytime</small></div>
+    <a href="#pricing" class="btn btn--red btn--sm" data-buy="membership">Join now</a>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/config.js?v=1"></script>
-  <script src="/core.js?v=1"></script>
-  <script src="/home.js?v=1"></script>
+  <script src="/config.js?v=2"></script>
+  <script src="/core.js?v=2"></script>
+  <script src="/home.js?v=2"></script>
 </body>
 </html>
