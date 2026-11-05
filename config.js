@@ -16,6 +16,8 @@ window.RS_CONFIG = {
   // Stripe customer portal login link, for members to update their card and see invoices.
   billingPortal: "https://billing.stripe.com/p/login/cNi14n86Z5Cz2QVbAQ0RG00",
 
+  // Stripe publishable key (public by design) for the on-site checkout page.
+  stripeKey: "pk_live_51UNIjPGoXXmRNVk9rpMcwSsIEkxZVfyfrawloU4Iom2WYeZDaWUuG3PxJP1uM4uhvZKYmT9LVDsyaXWZw2hT2lYo00AobB86gs",
   email: "cyrus@rareft.com",
   mainSite: "https://rarefeature.com",
 };

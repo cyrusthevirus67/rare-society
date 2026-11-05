@@ -50,7 +50,7 @@
     const p = pct();
     const st = S.settings;
     const qaWhen = st.qa_next_at && new Date(st.qa_next_at) > new Date(Date.now() - 3 * 3600e3) ? fmtDateTime(st.qa_next_at) : "";
-    const upgrade = `<p>Live Q&amp;A and the community come with the membership.</p><a class="btn btn--red btn--sm" href="${esc(CFG.offers.membership.checkout || "/#pricing")}">Upgrade for $${esc(CFG.offers.membership.price)}/mo</a>`;
+    const upgrade = `<p>Live Q&amp;A and the community come with the membership.</p><a class="btn btn--red btn--sm" href="${CFG.offers.membership.checkout ? "/checkout?plan=membership" : "/#pricing"}">Upgrade for $${esc(CFG.offers.membership.price)}/mo</a>`;
     show(`
       <p class="kicker">The Rare Society</p>
       <h1>${firstName() ? `Welcome back, ${esc(firstName())}.` : "Welcome back."}</h1>
@@ -154,7 +154,7 @@
             <button class="btn btn--line btn--sm" style="align-self:flex-start">Cancel my membership</button>
           </form>
         </section>` : ""}
-        ${!S.me.community ? `<section class="card card--wide card--hot"><p class="card__k">Upgrade</p><h2>Join the Society</h2><p>Add the monthly live Q&amp;A and the private community for $${esc(CFG.offers.membership.price)}/month.</p><a class="btn btn--red btn--sm" href="${esc(CFG.offers.membership.checkout || "/#pricing")}">Join the Society</a></section>` : ""}
+        ${!S.me.community ? `<section class="card card--wide card--hot"><p class="card__k">Upgrade</p><h2>Join the Society</h2><p>Add the monthly live Q&amp;A and the private community for $${esc(CFG.offers.membership.price)}/month.</p><a class="btn btn--red btn--sm" href="${CFG.offers.membership.checkout ? "/checkout?plan=membership" : "/#pricing"}">Join the Society</a></section>` : ""}
       </div>`);
     renderSide(null);
     stage.querySelector("[data-signout]").addEventListener("click", signOut);
@@ -184,8 +184,8 @@
       <h1>No active membership</h1>
       <p class="stage__lede">This email doesn’t have access to the course yet. If you paid with a different email, sign out and sign in with that one — or email <a href="mailto:${esc(CFG.email)}" style="color:#fff">${esc(CFG.email)}</a> and we’ll sort it out.</p>
       <div class="cards">
-        <section class="card card--hot"><p class="card__k">Membership</p><h2>The Rare Society</h2><p>The course, monthly live Q&amp;A, and the community. $${esc(o.membership.price)}/month.</p><a class="btn btn--red btn--sm" href="${esc(o.membership.checkout || "/#pricing")}">Join now</a></section>
-        <section class="card"><p class="card__k">Course only</p><h2>The course</h2><p>The full recorded course, yours to keep. $${esc(o.course.price)} one-time.</p><a class="btn btn--line btn--sm" href="${esc(o.course.checkout || "/#pricing")}">Buy the course</a></section>
+        <section class="card card--hot"><p class="card__k">Membership</p><h2>The Rare Society</h2><p>The course, monthly live Q&amp;A, and the community. $${esc(o.membership.price)}/month.</p><a class="btn btn--red btn--sm" href="${o.membership.checkout ? "/checkout?plan=membership" : "/#pricing"}">Join now</a></section>
+        <section class="card"><p class="card__k">Course only</p><h2>The course</h2><p>The full recorded course, yours to keep. $${esc(o.course.price)} one-time.</p><a class="btn btn--line btn--sm" href="${o.course.checkout ? "/checkout?plan=course" : "/#pricing"}">Buy the course</a></section>
       </div>`);
   }
 

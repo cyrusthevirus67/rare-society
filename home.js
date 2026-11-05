@@ -29,7 +29,7 @@
       if (plan && plan.label && plan.checkout) { el.hidden = false; el.textContent = plan.label; el.href = plan.checkout; }
       return;
     }
-    if (link[kind]) { el.href = link[kind]; return; }
+    if (link[kind]) { el.href = `/checkout?plan=${kind}`; return; }
     el.href = "#waitlist";
     el.addEventListener("click", () => {
       const want = document.querySelector("#waitlist-form select");
