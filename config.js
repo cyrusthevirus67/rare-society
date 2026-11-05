@@ -6,8 +6,8 @@ window.RS_CONFIG = {
   // Stripe payment links (Stripe → Payment links → Copy link). While a link is empty, its button
   // collects a waitlist sign-up instead of taking payment.
   offers: {
-    membership: { price: 49, checkout: "" },                        // $49/month subscription
-    course: { price: 297, checkout: "", plan: { label: "", checkout: "" } }, // one-time; plan e.g. "or 3 payments of $109"
+    membership: { price: 49, checkout: "https://buy.stripe.com/eVq7sL9b36GD4Z3cEU0RG04" },                        // $49/month subscription
+    course: { price: 297, checkout: "https://buy.stripe.com/fZufZh72V5CzcrvdIY0RG05", plan: { label: "", checkout: "" } }, // one-time; plan e.g. "or 3 payments of $109"
   },
 
   // Founding-member pricing note shown on the sales page. Set on: false to hide it.
