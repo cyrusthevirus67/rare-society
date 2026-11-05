@@ -188,3 +188,49 @@ body.sales { padding-bottom: 0; }
   .footer { padding-bottom: 96px; }
 }
 @media (prefers-reduced-motion: reduce) { .mock__win { transform: none; } }
+
+/* ===== Society-only look (same family as rarefeature.com, its own details) ===== */
+/* Red "marker" highlight on key words */
+.display em, .shero__title em, .turn em { font-style: normal; color: #fff; background: var(--red); padding: 0 .1em .02em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.shero__title em { display: inline; line-height: 1.02; }
+.shero__title { line-height: .98; }
+.label::before { width: 18px; height: 3px; border-radius: 0; }
+
+/* Hero photo frame */
+.sframe { position: relative; animation: floatIn 1.1s .15s var(--ease) both; }
+.sframe__img { position: relative; aspect-ratio: 4 / 4.6; border-radius: 28px; overflow: hidden; border: 1px solid var(--line-2); box-shadow: 0 50px 120px -40px rgba(0,0,0,.95), 0 30px 90px -40px rgba(255,59,47,.5); transform: rotate(1.5deg); }
+.sframe__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.sframe__img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(10,10,10,.65)); }
+.sframe__tag { position: absolute; left: 22px; bottom: 26px; display: inline-flex; align-items: center; gap: 10px; padding: 9px 14px; border-radius: 999px; background: rgba(10,10,10,.75); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line-2); font-size: .82rem; font-weight: 600; z-index: 2; }
+.sframe .rec-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 10px var(--red); animation: pulse 1.2s ease-in-out infinite; }
+.sframe .float--a { left: -34px; bottom: 96px; }
+.sframe .float--b { right: -20px; top: 28px; }
+
+/* Product preview inside the course card */
+.mock--inline { animation: none; }
+.mock--inline .mock__win { transform: none; box-shadow: 0 30px 80px -30px rgba(0,0,0,.9); }
+.mock--inline .mock__body { min-height: 0; }
+
+/* Photo strip instead of a text band */
+.strip { overflow: hidden; padding: 22px 0; border-block: 1px solid var(--line); background: #0d0d0d; }
+.strip__track { display: flex; align-items: center; gap: 22px; width: max-content; animation: marquee 45s linear infinite; }
+.strip img { width: 190px; height: 128px; object-fit: cover; border-radius: 14px; filter: grayscale(1) contrast(1.05); transition: filter .4s; }
+.strip img:hover { filter: none; }
+.strip span { font: 400 clamp(1.8rem, 3vw, 2.6rem)/1 var(--display); text-transform: uppercase; color: transparent; -webkit-text-stroke: 1.5px var(--red); white-space: nowrap; }
+
+/* Footer wordmark: filled fade instead of outline */
+.footer__word--fill { color: transparent; -webkit-text-stroke: 0; background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 90%); -webkit-background-clip: text; background-clip: text; font-size: clamp(3rem, 10.5vw, 10.5rem); }
+.footer__word--fill span { -webkit-text-stroke: 0; color: transparent; background: linear-gradient(180deg, rgba(255,59,47,.55), rgba(255,59,47,0) 90%); -webkit-background-clip: text; background-clip: text; }
+
+@media (max-width: 1100px) { .sframe { max-width: 560px; margin: 10px auto 0; width: 100%; } }
+@media (max-width: 640px) {
+  .sframe__img { aspect-ratio: 4 / 4.2; transform: none; }
+  .sframe .float--a { left: -6px; bottom: 74px; }
+  .sframe .float--b { right: -6px; top: -16px; }
+  .strip img { width: 140px; height: 96px; }
+}
+.sales .display, .shero__title, .turn p { line-height: 1.06; }
+.display em, .shero__title em, .turn em { padding: .02em .1em 0; }
+.sales .head { margin-bottom: clamp(40px, 5vw, 64px); }
+/* Marker sits behind the capitals only, so it never covers the line above */
+.display em, .shero__title em, .turn em { background: linear-gradient(transparent 22%, var(--red) 22%, var(--red) 86%, transparent 86%); padding: 0 .12em; }
