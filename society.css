@@ -413,3 +413,4 @@ body.app { min-height: 100svh; }
 .field > input, .field > select, .field > textarea { margin-top: 8px; }
 .field.check { display: flex; }
 .field.check > input { margin-top: 0; }
+@media (max-width: 640px) { .appbar #admin-link, .appbar #signout { display: none !important; } .appbar__links { gap: 0; } }

@@ -139,6 +139,8 @@
           <div class="card__row">
             ${safeUrl(CFG.billingPortal) ? `<a class="btn btn--line btn--sm" href="${esc(CFG.billingPortal)}" target="_blank" rel="noopener">Update card &amp; invoices ↗</a>` : ""}
             <a class="btn btn--line btn--sm" href="mailto:${esc(CFG.email)}">Email us</a>
+            ${S.me.admin ? `<a class="btn btn--line btn--sm" href="${esc(href("/admin"))}">Admin</a>` : ""}
+            <button type="button" class="btn btn--ghost btn--sm" data-signout>Sign out</button>
           </div>
           ${status === "past_due" ? "<p>Your last payment didn’t go through. Update your card to keep your access.</p>" : ""}
           ${status === "cancel_requested" ? "<p>We’ve got your cancellation request. Your membership won’t renew, and you keep access until the date above.</p>" : ""}
@@ -155,6 +157,7 @@
         ${!S.me.community ? `<section class="card card--wide card--hot"><p class="card__k">Upgrade</p><h2>Join the Society</h2><p>Add the monthly live Q&amp;A and the private community for $${esc(CFG.offers.membership.price)}/month.</p><a class="btn btn--red btn--sm" href="${esc(CFG.offers.membership.checkout || "/#pricing")}">Join the Society</a></section>` : ""}
       </div>`);
     renderSide(null);
+    stage.querySelector("[data-signout]").addEventListener("click", signOut);
     const form = document.getElementById("cancel-form");
     if (form) form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -196,10 +199,11 @@
   }
 
   // ---------- start ----------
-  document.getElementById("signout").addEventListener("click", async () => {
+  async function signOut() {
     await api.signOut().catch(() => {});
     location.href = DEMO ? href("/") : "/login";
-  });
+  }
+  document.getElementById("signout").addEventListener("click", signOut);
 
   (async () => {
     if (!configured) { show(`<h1>Sign-in unavailable</h1><p class="stage__lede">Please email <a href="mailto:${esc(CFG.email)}" style="color:#fff">${esc(CFG.email)}</a>.</p>`); return; }
