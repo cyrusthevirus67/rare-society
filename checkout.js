@@ -18,6 +18,7 @@
     },
   };
 
+  if (CFG.comingSoon) { location.replace("/#waitlist"); return; }
   const plan = new URLSearchParams(location.search).get("plan");
   const it = ITEMS[plan];
   if (!it) { location.replace("/#pricing"); return; }

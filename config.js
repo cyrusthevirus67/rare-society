@@ -3,6 +3,10 @@ window.RS_CONFIG = {
   // Same Supabase project as rarefeature.com (Supabase → Project Settings → API). The key is public by design.
   supabase: { url: "https://hjvezrxvrshdlprnalin.supabase.co", anonKey: "sb_publishable_KHYN133iCCSZ8buwdY2FiA_Yoxgr7Ys" },
 
+  // Coming soon: true = no buying anywhere on the site; every button joins the waitlist instead.
+  // Set to false when the course is ready to sell.
+  comingSoon: true,
+
   // Stripe payment links (Stripe → Payment links → Copy link). While a link is empty, its button
   // collects a waitlist sign-up instead of taking payment.
   offers: {

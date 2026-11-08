@@ -16,7 +16,8 @@
   }
 
   // Buy buttons go to Stripe when a link is set; otherwise to the waitlist.
-  const link = {
+  const soon = !!CFG.comingSoon;
+  const link = soon ? {} : {
     membership: offers.membership && offers.membership.checkout,
     course: offers.course && offers.course.checkout,
     "course-plan": offers.course && offers.course.plan && offers.course.plan.checkout,
@@ -25,6 +26,7 @@
   document.querySelectorAll("[data-buy]").forEach((el) => {
     const kind = el.dataset.buy;
     if (kind === "course-plan") {
+      if (soon) return;
       const plan = offers.course && offers.course.plan;
       if (plan && plan.label && plan.checkout) { el.hidden = false; el.textContent = plan.label; el.href = plan.checkout; }
       return;
@@ -39,7 +41,7 @@
   if (!open) {
     document.getElementById("waitlist-form").hidden = false;
     document.getElementById("cta-buy").hidden = true;
-    document.getElementById("cta-sub").textContent = "Founding members get in first, at the founding price. Join the list and we’ll email you the moment doors open.";
+    document.getElementById("cta-sub").textContent = "The Rare Society opens soon. Founding members get in first, at the founding price — join the list and we’ll email you the moment doors open.";
   }
   const plan = offers.course && offers.course.plan;
   if (plan && plan.label && plan.checkout) document.querySelector("[data-plan-label]").textContent = `Yours to keep · ${plan.label}`;
